@@ -17,7 +17,7 @@ export class ApiService {
   }
 
   getRepos(githubUsername: string, page: number, limit: number) {
-    return this.httpClient.get(`http://localhost:3000/api/repos/?username=${githubUsername}&page=${page}&limit=${limit}`);
+    return this.httpClient.get(`https://fyle-frontend-development-challenge.onrender.com/api/repos/?username=${githubUsername}&page=${page}&limit=${limit}`);
   }
   getAllReposLength(githubUsername: string) {
     return this.httpClient.get(`https://api.github.com/users/${githubUsername}/repos`);
