@@ -1,0 +1,46 @@
+<div class="flex flex-col items-center space-y-2">
+  <div class="flex items-center space-x-1">
+    <!-- Previous Page Button -->
+    <button (click)="goToPage(currentPage - 1)"
+            [disabled]="currentPage === 1"
+            class="px-2 py-1 border rounded disabled:opacity-50"
+            [class.cursor-not-allowed]="currentPage === 1">
+      «
+    </button>
+
+    <!-- Page Numbers -->
+    <button *ngFor="let page of pages"
+            (click)="goToPage(page)"
+            [class.bg-blue-500]="page === currentPage"
+            [class.text-white]="page === currentPage"
+            class="p-0 m-0 w-10   border border-black ">
+      {{ page }}
+    </button>
+
+    <!-- Next Page Button -->
+    <button (click)="goToPage(currentPage + 1)"
+            [disabled]="currentPage === totalPages"
+            class="px-2 py-1 border rounded disabled:opacity-50"
+            [class.cursor-not-allowed]="currentPage === totalPages">
+      »
+    </button>
+  </div>
+
+  <div class="flex items-center space-x-4">
+    <!-- Older Button -->
+    <button (click)="goToPage(currentPage - 1)"
+            [disabled]="currentPage === 1"
+            class="px-4 py-2 border rounded disabled:opacity-50 flex items-center"
+            [class.cursor-not-allowed]="currentPage === 1">
+      <span class="mr-2">←</span> Older
+    </button>
+
+    <!-- Newer Button -->
+    <button (click)="goToPage(currentPage + 1)"
+            [disabled]="currentPage === totalPages"
+            class="px-4 py-2 border rounded disabled:opacity-50 flex items-center"
+            [class.cursor-not-allowed]="currentPage === totalPages">
+      Newer <span class="ml-2">→</span>
+    </button>
+  </div>
+</div>
