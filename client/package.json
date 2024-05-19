@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm install -g @angular/cli && ng build",
+    "build": "npm install && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -45,8 +45,7 @@
     "typescript": "~5.1.3"
   },
   "engines": {
-    "node":"20.5.0",
-    "npm":"9.8.0"
-
+    "node": "20.5.0",
+    "npm": "9.8.0"
   }
 }
